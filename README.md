@@ -4,7 +4,7 @@ This Project aims to represent data of events by a JSON API
 
 ## Implementation
 
-### *GET*
+### **GET**
 
 ```
 "/api/v1/comments"
@@ -32,7 +32,7 @@ text     | string  | A description of event |
 user_id  | integer | Id of user             |
 event_id | integer | Id of Event            | 
 
-### *POST*
+### **POST**
 
 ```
 "/api/v1/comments"
