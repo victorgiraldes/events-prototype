@@ -32,6 +32,32 @@ text     | string  | A description of event |
 user_id  | integer | Id of user             |
 event_id | integer | Id of Event            | 
 
+### **GET**
+
+```
+"/api/v1/reports"
+```
+**Response (Status: 200)**
+
+```The endpoint returns comments reporteds```
+
+```
+    {
+        "id": 6,
+        "text": "Meetup sobre Rails",
+        "user_id": 1,
+        "event_id": 1,
+        "created_at": "2019-02-10T18:22:49.000Z",
+        "updated_at": "2019-02-10T18:22:49.000Z"
+    }
+```
+Response Content type ```application/json```
+
+Field      | Type    | Description            |
+-----      | ----    | -----------            |
+user_id    | integer | Id of user             |
+comment_id | integer | Id of Comment          | 
+
 ### **POST**
 
 ```
