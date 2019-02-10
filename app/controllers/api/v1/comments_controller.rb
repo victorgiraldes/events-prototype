@@ -1,13 +1,14 @@
-class Api::V1::CommentsController < Api::V1::BaseController
+class Api::V1::CommentsController < ApplicationController
 
   respond_to :json
 
   def index
-    comments = Comment.All
+    comments = Comment.all
+    render json: comments, status: 200
   end
 
   def create
-    comment = Comment.new(comments_params)
+    comment = Comment.new(comment_params)
     if comment.save
       render json: comment, status: 201
     else
@@ -17,8 +18,8 @@ class Api::V1::CommentsController < Api::V1::BaseController
 
   private
 
-  def comments_params
-      params.require(:comment).permit(:text, :user_id, :event_id)
-  end
+    def comment_params
+      params.permit(:text, :user_id, :event_id)
+    end
 
 end

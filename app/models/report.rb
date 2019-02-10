@@ -5,5 +5,5 @@ class Report < ApplicationRecord
   has_many :user, dependent: :destroy
   has_many :comment, dependent: :destroy
 
-  validates_presence_of :user, :comment
+  validates_presence_of :user_id, :comment_id
 end
