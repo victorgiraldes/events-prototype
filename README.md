@@ -1,24 +1,79 @@
-# README
+# Events Prototype API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Project aims to represent data of events by a JSON API
 
-Things you may want to cover:
+## Implementation
 
-* Ruby version
+### **GET**
 
-* System dependencies
+```
+"/api/v1/comments"
+```
+**Response (Status: 200)**
 
-* Configuration
+```The endpoint returns comments of events```
 
-* Database creation
+```
+    {
+        "id": 1,
+        "text": "Eu adorei a festa",
+        "user_id": 1,
+        "event_id": 1,
+        "created_at": "2019-02-09T21:40:38.000Z",
+        "updated_at": "2019-02-09T21:40:38.000Z"
+    }
+```
+Response Content type ```application/json```
 
-* Database initialization
+Field    | Type    | Description            |
+-----    | ----    | -----------            |
+id       | integer | Id                     |
+text     | string  | A description of event |
+user_id  | integer | Id of user             |
+event_id | integer | Id of Event            | 
 
-* How to run the test suite
+### **POST**
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+"/api/v1/comments"
+```
+**Response (Status: 201)**
 
-* Deployment instructions
 
-* ...
+The endpoint returns the registered comment
+
+```
+{
+    "id": 6,
+    "text": "Meetup sobre Rails",
+    "user_id": 1,
+    "event_id": 1,
+    "created_at": "2019-02-10T18:22:49.000Z",
+    "updated_at": "2019-02-10T18:22:49.000Z"
+}
+```
+
+Field    | Type    | Description            |
+-----    | ----    | -----------            |
+text     | string  | A description of event |
+user_id  | integer | Id of user             |
+event_id | integer | Id of Event            | 
+
+
+**Response (Status: 422)**
+
+
+```The endpoint returns a missing data error```
+
+```
+{
+    "errors": {
+        "event": [
+            "must exist"
+        ],
+        "event_id": [
+            "can't be blank"
+        ]
+    }
+}
+```
