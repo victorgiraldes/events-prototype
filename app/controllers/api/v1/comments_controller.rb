@@ -7,6 +7,11 @@ class Api::V1::CommentsController < ApplicationController
     render json: comments, status: 200
   end
 
+  def comments_reports
+    comments = Comment.reported
+    render json: comments, status: 200
+  end
+
   def create
     comment = Comment.new(comment_params)
     if comment.save
