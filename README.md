@@ -32,7 +32,7 @@ id           | integer | Id of event            |
 name         | string  | A name of event        |
 description  | string  | A description of event |
 lat          | string  | Latitude do evento     |
-lng          | string  | Latitude do evento     | 
+lng          | string  | Longitude do evento    | 
 
 ### **GET**
 
