@@ -35,7 +35,7 @@ event_id | integer | Id of Event            |
 ### **GET**
 
 ```
-"/api/v1/reports"
+"/api/v1/comments#comments_reporteds"
 ```
 **Response (Status: 200)**
 
