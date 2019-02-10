@@ -1,24 +1,26 @@
-# README
+# Events Prototype API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Project aims to represent data of events by a JSON API
 
-Things you may want to cover:
+## Implementation
 
-* Ruby version
+### *GET*
 
-* System dependencies
+```
+"/api/v1/comments"
+```
+Response (Status: 200)
 
-* Configuration
+_The endpoint returns comments of events_
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+    {
+        "id": 1,
+        "text": "Eu adorei a festa",
+        "user_id": 1,
+        "event_id": 1,
+        "created_at": "2019-02-09T21:40:38.000Z",
+        "updated_at": "2019-02-09T21:40:38.000Z"
+    }
+```
+Response Content type ```application/json```
