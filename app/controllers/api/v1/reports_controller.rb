@@ -2,11 +2,6 @@ class Api::V1::ReportsController < ApplicationController
 
   respond_to :json
 
-  def index
-    reports = Report.all
-    render json: reports, status: 200
-  end
-
   def create
     report = Report.new(report_params)
     if report.save
@@ -15,8 +10,6 @@ class Api::V1::ReportsController < ApplicationController
       render json: { errors: report.errors }, status: 422
     end
   end
-
-
 
   private
 

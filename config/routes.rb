@@ -4,11 +4,10 @@ Rails.application.routes.draw do
 
     namespace :api do
       namespace :v1 do
+        resources :events, only: [:index, :create, :destroy]
         resources :comments, only: [:index, :create, :comments_reports]
-        resources :reports, only: [:index, :create]
+        resources :reports, only: [:create]
       end
     end
-
-
 
 end
